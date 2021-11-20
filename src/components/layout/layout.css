@@ -10,13 +10,14 @@
 
 .layout__content-main {
     padding: 30px;
+    min-height: 100vh;
 }
 
 .content__wrapper{
-    padding: 20px;
+    padding: 30px 50px;
     background-color: #fff;
     border-radius: 20px;
-    min-height: calc(100vh - 105px);
+    min-height: calc(100vh - 60px);
     transition: all 0.5s ease-in-out;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }

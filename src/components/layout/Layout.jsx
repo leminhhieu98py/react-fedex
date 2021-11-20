@@ -1,30 +1,43 @@
-import React from 'react'
-import Sidebar from '../sidebar/Sidebar'
-import DeclarationFee from '../../pages/DeclarationFee'
-import DeclarationInfo from '../../pages/DeclarationInfo'
+import React from "react";
+import Sidebar from "../sidebar/Sidebar";
+import routes from "../../routes.jsx";
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import "./layout.css"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./layout.css";
 
 const Layout = () => {
-    return (
-        <React.Fragment>
-            <BrowserRouter>
-                <div className="layout">
-                    <Sidebar />
-                    <div className="layout__content">
-                        <div className="layout__content-main">
-                            <Routes>
-                                <Route path="/customsDeclarationFee" element={<DeclarationFee />} />
-                                <Route path="/customsDeclarationInfo" element={<DeclarationInfo />} />
-                            </Routes>
-                        </div>
-                    </div>
-                </div>
-            </BrowserRouter>
-        </React.Fragment>
-        
-    )
-}
+  let showContent = (routes) => {
+    let result = null;
+    if (routes.length > 0) {
+      result = routes.map((route, index) => {
+        return (
+          <Route
+            key={index}
+            exact={route.exact}
+            path={route.path}
+            element={route.main()}
+          />
+        );
+      });
+    }
 
-export default Layout
+    return <Routes>{result}</Routes>;
+  };
+
+  return (
+    <React.Fragment>
+      <BrowserRouter>
+        <div className='layout'>
+          <Sidebar />
+          <div className='layout__content'>
+            <div className='layout__content-main'>
+              {showContent(routes)}
+            </div>
+          </div>
+        </div>
+      </BrowserRouter>
+    </React.Fragment>
+  );
+};
+
+export default Layout;
