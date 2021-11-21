@@ -1,11 +1,10 @@
-import React, { useState } from "react";
-import { TextField, Button } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
+import { Button, TextField } from "@mui/material";
 import Grid from "@mui/material/Grid";
-import Default from "./Default";
-import { DeclarationDetail } from "./DeclarationDetail";
-import axios from "axios";
+import React, { useState } from "react";
 import callApi from "../../utils/apiCaller";
+import { DeclarationDetail } from "./DeclarationDetail";
+import Default from "./Default";
 
 const DeclarationInfo = () => {
   const [defautPageStatus, setDefaultPageStatus] = useState(true);

@@ -1,7 +1,9 @@
 import React from 'react';
 
 const SidebarItem = props => {
-    const active = props.active ? 'active' : ''
+    let active = props.active ?? ''
+    if(props.route === window.location.pathname)
+        active = 'active'
 
     return (
         <div onClick={() => {props.onclick(props.itemId)}} className="sidebar__item">

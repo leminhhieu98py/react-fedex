@@ -2,7 +2,7 @@ import { Grid } from '@mui/material'
 import React from 'react'
 
 const GeneralInfomation = (data) => {
-    let {aa, bb, cc, dd, ee, ff, gg, hh, ii, jj, kk, ...rest} = data.data
+    let {aa, bb, cc, dd, ee, ff, gg, hh, ii, jj, kk} = data.data
     
     return (
     <Grid container spacing={3}>

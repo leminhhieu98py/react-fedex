@@ -13,7 +13,7 @@ const TableRows = (data) => {
         let rows = [];
     
         items.map((item, index) => {
-            let {numberOfPackage, packageWeight, actualPackage, confirmation, ...rest} = item
+            let {numberOfPackage, packageWeight, actualPackage, confirmation} = item
             return rows.push(createData(index, numberOfPackage, packageWeight, actualPackage, confirmation));
         })
 
