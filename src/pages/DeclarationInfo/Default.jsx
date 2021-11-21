@@ -9,7 +9,7 @@ const Default = () => {
                 <img src={img} style={{ width: "35%", marginTop: "10%" }} alt='Page not found' />
             </Grid>
             <Grid item xs={12} style={{ textAlign: "center" }}>
-                <h1 style={{ marginTop: "30px" }}>Tra cước tờ khai</h1>
+                <h2 style={{ marginTop: "30px" }}>Vui lòng nhập dữ liệu</h2>
             </Grid>
         </Grid>
     );

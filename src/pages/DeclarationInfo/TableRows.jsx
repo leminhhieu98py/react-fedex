@@ -8,7 +8,7 @@ function createData(order, numberOfPackage, packageWeight, actualPackage, confir
 }
 
 const TableRows = (data) => {
-    const items = data.items ? data.items : []
+    const items = data.data.items ?? []
     if(items.length > 0){
         let rows = [];
     

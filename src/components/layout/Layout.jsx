@@ -1,39 +1,31 @@
-import React from "react";
+import React, {useState} from "react";
 import Sidebar from "../sidebar/Sidebar";
-import routes from "../../routes.jsx";
-
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import "./layout.css";
+import Content from "../content/Content";
+import { IconButton } from "@mui/material";
+import MenuIcon from '@mui/icons-material/Menu';
 
 const Layout = () => {
-  let showContent = (routes) => {
-    let result = null;
-    if (routes.length > 0) {
-      result = routes.map((route, index) => {
-        return (
-          <Route
-            key={index}
-            exact={route.exact}
-            path={route.path}
-            element={route.main()}
-          />
-        );
-      });
-    }
+  const [open, setOpen] = useState(true)
 
-    return <Routes>{result}</Routes>;
-  };
+  const handleToggle = () => {
+    setOpen(!open)
+  }
 
   return (
     <React.Fragment>
       <BrowserRouter>
         <div className='layout'>
-          <Sidebar />
-          <div className='layout__content'>
-            <div className='layout__content-main'>
-              {showContent(routes)}
-            </div>
-          </div>
+          <IconButton 
+            onClick={handleToggle} 
+            style={{position: "relative", transitionDuration: "1s", zIndex: "2", marginTop: "10px", marginLeft: open ? '250px' : '10px'}}>
+              <MenuIcon />
+          </IconButton>
+
+
+          <Sidebar open={open} />
+          <Content open={open} />
         </div>
       </BrowserRouter>
     </React.Fragment>

@@ -20,7 +20,7 @@ const Sidebar = () => {
                             icon={item.icon}
                             title={item.display_name}
                             itemId={index}
-                            active={index === activeItem}
+                            active={item.route === window.location.pathname}
                             onclick= {(id)=> {setActiveItem(id)}}
                         />
                     </Link>
