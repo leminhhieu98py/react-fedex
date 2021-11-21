@@ -2,7 +2,7 @@ import React from 'react'
 
 const DeclarationFee = () => {
     return (
-        <div>
+        <div className='content__wrapper'>
             DeclarationFee
         </div>
     )

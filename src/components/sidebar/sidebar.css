@@ -1,55 +1,83 @@
 .sidebar {
-    width: 300px;
-    height: 100vh;
-    position: fixed;
-    left: 0;
-    top: 0;
-    background-color: var(--main-bg);
-    box-shadow: var(--box-shadow);
+  width: 300px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #ffffff;
+  box-shadow: #959da533 0px 8px 24px;
 }
 
 .sidebar__logo {
-    height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  height: 120px;
+  padding: 30px 20px 20px 20px;
 }
 
 .sidebar__logo > img {
-    height: 45px;
+  height: 60px;
 }
 
 .sidebar__item {
-    padding: 0 20px;
+  padding: 0 20px;
 }
 
 .sidebar__item-inner {
-    padding: 15px 25px;
-    display: flex;
-    align-items: center;
-    font-weight: 600;
-    transition: color 0.3s ease 0s;
+  padding: 15px 25px;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  transition: color 0.3s ease 0s;
 }
 
 .sidebar__item-inner > i {
-    margin-right: 10px;
-    font-size: 1.5rem;
+  margin-right: 10px;
+  font-size: 1.5rem;
 }
 
 .sidebar__item-inner > span {
-    text-transform: capitalize;
+  text-transform: capitalize;
 }
 
 .sidebar__item-inner:hover {
-    color: var(--main-color);
+  color: var(--main-color);
 }
 
 .sidebar__item-inner.active {
-    border-radius: var(--border-radius);
-    background-image: linear-gradient(
-        to right,
-        var(--main-color),
-        var(--second-color)
-    );
-    color: var(--txt-white);
+  border-radius: 15px;
+  background-image: linear-gradient(to right, #7733ff, #9966ff);
+  color: #fff;
+}
+
+.sidebar .sidebar_inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.sidebar .sidebar_inner hr {
+  margin: 5px 20px 15px 20px;
+  opacity: 0.6;
+}
+
+.sidebar .sidebar_inner .bottom__content {
+  padding: 0 20px 20px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sidebar .sidebar_inner .bottom__content .profile{
+  display: flex;
+  align-items: center;
+}
+
+.sidebar .sidebar_inner .bottom__content .link-to-profile {
+  margin-left: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #0000008a;
+}
+
+.sidebar .sidebar_inner .bottom__content .link-to-profile:hover{
+  color: #000000b7;
 }

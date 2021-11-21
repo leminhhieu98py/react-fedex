@@ -1,5 +1,5 @@
 import React from 'react'
-import img from '../../assets/images/not_found.svg'
+import img from '../../assets/images/not_found.png'
 import Grid from '@mui/material/Grid';
 
 
