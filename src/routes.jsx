@@ -15,11 +15,11 @@ const routes = [
         exact: true,
         main: () => <DeclarationInfo />
     },
-    {
-        path: "/login",
-        exact: true,
-        main: () => <Login />
-    },
+    // {
+    //     path: "/login",
+    //     exact: true,
+    //     main: () => <Login />
+    // },
     {
         path: "/logout",
         exact: true,
