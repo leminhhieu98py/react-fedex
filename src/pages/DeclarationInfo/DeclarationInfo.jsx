@@ -10,7 +10,7 @@ const DeclarationInfo = () => {
   const [defautPageStatus, setDefaultPageStatus] = useState(true);
   const [companyRef, setCompanyRef] = useState("");
   const [declarationRef, setDeclarationRef] = useState("");
-  const [data, setData] = useState({
+  const emptyData = {
     generalInfomation: {
       aa: "",
       bb: "",
@@ -26,7 +26,8 @@ const DeclarationInfo = () => {
     },
     items: [],
     id: "",
-  });
+  }
+  const [data, setData] = useState(emptyData);
 
   const inputValidation = () => {
     if (Boolean(companyRef && declarationRef)) return true;
@@ -40,7 +41,7 @@ const DeclarationInfo = () => {
 
       let url = "declaration/" + declarationRef;
       callApi(url).then((res) => {
-        let data_api = res?.data ?? data;
+        let data_api = res?.data ?? emptyData;
         // console.log(data_api)
         setData(data_api);
       });

@@ -4,12 +4,13 @@ import reportWebVitals from './reportWebVitals';
 
 import './assets/css/index.css'
 
-import Layout from './components/layout/Layout'
-// import Login from './page'
+import Authentication from './components/authentication/Authentication'
+// import Layout from './components/layout/Layout';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Layout />
+    <Authentication />
+    {/* <Layout /> */}
   </React.StrictMode>,
   document.getElementById('root')
 );

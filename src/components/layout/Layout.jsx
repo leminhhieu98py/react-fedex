@@ -3,7 +3,7 @@ import { IconButton } from "@mui/material";
 import { purple } from '@mui/material/colors';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import React, { useState } from "react";
-import { BrowserRouter } from "react-router-dom";
+// import { BrowserRouter } from "react-router-dom";
 import Content from "../content/Content";
 import Sidebar from "../sidebar/Sidebar";
 import "./layout.css";
@@ -25,8 +25,8 @@ const Layout = () => {
 
   return (
     <React.Fragment>
+      {/* <BrowserRouter> */}
       <ThemeProvider theme={theme}>
-        <BrowserRouter>
           <div className='layout'>
             <IconButton
               onClick={handleToggle}
@@ -49,8 +49,8 @@ const Layout = () => {
             <Sidebar open={open} />
             <Content open={open} />
           </div>
-        </BrowserRouter>
       </ThemeProvider>
+      {/* </BrowserRouter> */}
     </React.Fragment>
   );
 };

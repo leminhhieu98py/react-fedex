@@ -3,8 +3,8 @@ import "./login.css"
 
 const Login = () => {
     return (
-        <div>
-            
+        <div className="loginDiv">
+            login page
         </div>
     )
 }
