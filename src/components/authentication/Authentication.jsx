@@ -1,21 +1,57 @@
-import React from 'react';
-import { Route, Routes } from 'react-router';
-import { BrowserRouter } from 'react-router-dom';
-import Layout from '../layout/Layout';
-import Login from '../login/Login';
-import PrivateRoute from "./PrivateRoute";
+import React, { useState } from "react";
+import { Route, Routes } from "react-router";
+import { BrowserRouter, Navigate } from "react-router-dom";
+import Layout from "../layout/Layout";
+import Login from "../login/Login";
+import ForgetPassword from "../forgetPassword/ForgetPassword";
+import { purple } from "@mui/material/colors";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+
+const theme = createTheme({
+    palette: {
+        primary: {
+            main: purple[300],
+        },
+    },
+});
 
 const Authentication = () => {
-    return (
-        <BrowserRouter>
-            <Routes>
-                <Route to="/login" element={<Login />} />
-                <Route exact path='/' element={<PrivateRoute/>}>
-                    <Route exact path='/' element={<Layout/>}/>
-                </Route>
-            </Routes>
-        </BrowserRouter>
-    )
-}
+    const [isLoggedIn, setIsLoggedIn] = useState(
+        localStorage.getItem("isLoggedIn")
+    );
 
-export default Authentication
+    return (
+        <ThemeProvider theme={theme}>
+            <BrowserRouter>
+                <Routes>
+                    {isLoggedIn ? (
+                        <Route path='/' element={<Layout />} />
+                    ) : (
+                        <React.Fragment>
+                            <Route
+                                path='*'
+                                element={<Navigate to='/login' />}
+                            />
+                            <Route
+                                path='/login'
+                                element={
+                                    <Login
+                                        handleLogin={(loginStatus) =>
+                                            setIsLoggedIn(loginStatus)
+                                        }
+                                    />
+                                }
+                            />
+                            <Route
+                                path='/forgetpassword'
+                                element={<ForgetPassword />}
+                            />
+                        </React.Fragment>
+                    )}
+                </Routes>
+            </BrowserRouter>
+        </ThemeProvider>
+    );
+};
+
+export default Authentication;

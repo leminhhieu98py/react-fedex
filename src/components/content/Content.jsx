@@ -1,10 +1,8 @@
 import React from 'react'
 import routes from "../../routes.jsx";
-import { Routes, Route } from "react-router-dom";
-
+import { Routes, Route } from "react-router";
 
 const Content = (props) => {
-    const open = props.open
     let showContent = (routes) => {
         let result = null;
         if (routes.length > 0) {
@@ -23,7 +21,7 @@ const Content = (props) => {
     };
 
     return (
-        <div className='layout__content' style={{paddingLeft: open ? "300px" : "30px", transition: "padding-left 0.5s ease-in-out"}}>
+        <div className='layout__content' style={{paddingLeft: props.open ? "300px" : "30px", transition: "padding-left 0.5s ease-in-out"}}>
             <div className='layout__content-main'>
             {showContent(routes)}
             </div>

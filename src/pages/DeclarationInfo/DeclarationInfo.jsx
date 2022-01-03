@@ -90,7 +90,6 @@ const DeclarationInfo = () => {
           alignItems='flex-end'
         >
           <Button
-            // color="primary"
             onClick={handleSearch}
             style={{ borderRadius: "10px" }}
             id='searchBtn'
