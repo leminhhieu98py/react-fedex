@@ -25,7 +25,14 @@ const Authentication = () => {
             <BrowserRouter>
                 <Routes>
                     {isLoggedIn ? (
-                        <Route path='/' element={<Layout />} />
+                        <Route
+                            path='*'
+                            element={
+                                <Layout
+                                    handleLogout={() => setIsLoggedIn(false)}
+                                />
+                            }
+                        />
                     ) : (
                         <React.Fragment>
                             <Route
@@ -36,9 +43,7 @@ const Authentication = () => {
                                 path='/login'
                                 element={
                                     <Login
-                                        handleLogin={(loginStatus) =>
-                                            setIsLoggedIn(loginStatus)
-                                        }
+                                        handleLogin={() => setIsLoggedIn(true)}
                                     />
                                 }
                             />

@@ -15,7 +15,7 @@ const Sidebar = (props) => {
                 <SidebarTop />
 
                 {/* sidebar bottom */}
-                <SidebarBottom />
+                <SidebarBottom handleLogout={props.handleLogout} />
             </div>
         </div>
     )

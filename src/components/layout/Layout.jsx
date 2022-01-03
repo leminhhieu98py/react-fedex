@@ -5,7 +5,7 @@ import Content from "../content/Content";
 import Sidebar from "../sidebar/Sidebar";
 import "./layout.css";
 
-const Layout = () => {
+const Layout = (props) => {
     const [open, setOpen] = useState(true);
     const handleToggle = () => {
         setOpen(!open);
@@ -33,7 +33,7 @@ const Layout = () => {
                     <MenuIcon />
                 </IconButton>
 
-                <Sidebar open={open} />
+                <Sidebar open={open} handleLogout={props.handleLogout} />
                 <Content open={open} />
             </div>
         </React.Fragment>

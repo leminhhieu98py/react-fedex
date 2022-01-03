@@ -14,11 +14,6 @@ const routes = [
         exact: true,
         main: () => <DeclarationInfo />
     },
-    // {
-    //     path: "/logout",
-    //     exact: true,
-    //     main: () => <Login />
-    // },
     {
         path: "*",
         exact: false,

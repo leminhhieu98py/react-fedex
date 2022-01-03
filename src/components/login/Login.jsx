@@ -27,7 +27,7 @@ const Login = (props) => {
         if (usernameValid && passwordValid) {
             if (username === "admin" && password === "123") {
                 localStorage.setItem("isLoggedIn", true);
-                props.handleLogin(true);
+                props.handleLogin();
             }
         }
     };

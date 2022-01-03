@@ -7,7 +7,7 @@ import Badge from '@mui/material/Badge';
 import { Link } from 'react-router-dom'
 
 
-const SidebarBottom = () => {
+const SidebarBottom = (props) => {
     const StyledBadge = styled(Badge)(({ theme }) => ({
         '& .MuiBadge-badge': {
           backgroundColor: '#44b700',
@@ -37,6 +37,11 @@ const SidebarBottom = () => {
         },
       }));
 
+      const handleLogout = () => {
+        localStorage.removeItem("isLoggedIn");
+        props.handleLogout()
+      }
+
     return (
         <div className="sidebar__inner-bottom">
             <hr />
@@ -51,7 +56,7 @@ const SidebarBottom = () => {
                   </StyledBadge>
                   <Link to="/profile" className="link-to-profile">Fedex Co.operation</Link>
                 </div>
-                <Link to="/logout"><IconButton style={{marginTop: "2px"}} ><LogoutIcon fontSize="small" /></IconButton></Link>
+                <IconButton style={{marginTop: "2px"}} onClick={handleLogout}><LogoutIcon fontSize="small" /></IconButton>
             </div>
         </div>
     )
