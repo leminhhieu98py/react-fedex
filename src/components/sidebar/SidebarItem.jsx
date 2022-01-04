@@ -1,11 +1,9 @@
 import React from 'react';
 
 const SidebarItem = props => {
-    let active = props.active ? 'active' : ''
-
     return (
         <div className="sidebar__item">
-            <div className={`sidebar__item-inner ${active}`}>
+            <div className={`sidebar__item-inner`}>
                 {props.icon}
                 <span>{props.title}</span>
             </div>

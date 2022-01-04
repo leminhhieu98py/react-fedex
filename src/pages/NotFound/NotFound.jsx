@@ -5,7 +5,7 @@ import Grid from '@mui/material/Grid';
 
 const NotFound = () => {
     return (
-        <div className="content__wrapper">
+        <>
             <Grid container spacing={3}>
                 <Grid item xs={12} style={{textAlign: "center"}}>
                     <img src={img} style={{width: "70%", marginTop: "50px"}} alt="Page not found" />
@@ -14,7 +14,7 @@ const NotFound = () => {
                     <h1 style={{marginTop: "30px"}}>Trang không tìm thấy, vui lòng thử lại sau</h1>
                 </Grid>
             </Grid>
-        </div>
+        </>
     )
 }
 

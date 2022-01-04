@@ -42,7 +42,7 @@
   color: var(--main-color);
 }
 
-.sidebar__item-inner.active {
+.nav-link.active .sidebar__item-inner {
   border-radius: 15px;
   background-image: linear-gradient(to right, #7733ff, #9966ff);
   color: #fff;

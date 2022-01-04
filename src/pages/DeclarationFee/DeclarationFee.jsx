@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import HeaderTitle from "./../../components/UI/HeaderTitle/HeaderTitle";
 
 const DeclarationFee = () => {
     return (
-        <div className='content__wrapper'>
-            DeclarationFee
-        </div>
-    )
-}
+        <>
+            <HeaderTitle>Tra cước tờ khai</HeaderTitle>
+        </>
+    );
+};
 
-export default DeclarationFee
+export default DeclarationFee;
