@@ -51,7 +51,6 @@ const DeclarationInfo = () => {
 
     return (
         <>
-            {/* <div className='content__wrapper'> */}
             {/* Filters and input */}
             <Grid container spacing={3}>
                 <HeaderTitle>Tra cứu tờ khai</HeaderTitle>
@@ -106,7 +105,6 @@ const DeclarationInfo = () => {
 
             {/* Seach Content */}
             {defautPageStatus ? <Default /> : <DeclarationDetail data={data} />}
-            {/* </div> */}
         </>
     );
 };
